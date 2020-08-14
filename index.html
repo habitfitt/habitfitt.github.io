@@ -60,7 +60,7 @@
     <!-- Header End -->
 
     <!-- Hero Section Begin -->
-    <section class="hero-section">
+    <!-- <section class="hero-section">
         <div class="hero-items owl-carousel">
             <div class="single-hero-item set-bg" data-setbg="img/hero-slider/1.jpg">
                 <div class="container">
@@ -70,7 +70,6 @@
                                 <h2>Join Us Now</h2>
                                 <h1>HABIT - FITNESS</h1>
                                 <p>Cardio, Muscle strengthening, Building Stamina, <br/>Lower body workouts</p>
-                                <!-- <a href="#" class="primary-btn">Read More</a> -->
                             </div>
                         </div>
                     </div>
@@ -84,7 +83,6 @@
                                 <h2>Join Us Now</h2>
                                 <h1>HABIT - YOGA</h1>
                                 <p>Traditional Yoga, Acupressure Yoga, Power Yoga</p>
-                                <!-- <a href="#" class="primary-btn">Read More</a> -->
                             </div>
                         </div>
                     </div>
@@ -98,14 +96,13 @@
                                 <h2>Join Us Now</h2>
                                 <h1>HABIT - JUNIOR</h1>
                                 <p>Basic Calisthenics, Plyometric exercise, <br/>combination of jump and other Exercise.</p>
-                                <!-- <a href="#" class="primary-btn">Read More</a> -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Hero End -->
 
     <!-- About Section Begin -->
@@ -873,10 +870,11 @@
 						<!-- </div> -->
 						<div class="map-contact-form">
 							<h5>Contact Us</h5>
-							<form action="#">
-								<input type="text" placeholder="Name">
-								<input type="text" class="phone" placeholder="Phone">
-								<textarea placeholder="Message"></textarea>
+							<form action="#" name="contact-form">
+								<input type="text" placeholder="Name" name="name">
+								<input type="text" class="phone" placeholder="Phone" name="phone" >
+								<input type="email" class="email" placeholder="Email Address" name="emailaddress" >
+								<textarea placeholder="Message" name="message"></textarea>
 								<button type="submit" class="site-btn">Submit Now</button>
 							</form>
 						</div>
@@ -909,6 +907,20 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/masonry.pkgd.min.js"></script>
     <script src="js/main.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        $("form[name='contact-form']").on("submit", function(e){
+            e.preventDefault();
+            Email.send({
+                SecureToken : "7732511e-458b-4239-898a-12b4153673e8",
+                To : 'pkiruba85@gmail.com',
+                From : $("input[name='emailaddress']").val(),
+                Subject : "HABITFIT: Message",
+                Body : $("textarea[name='message']").val()
+            }).then(
+                message => alert(message)
+            );
+        });
+    </script>
 </body>
 
 </html>
