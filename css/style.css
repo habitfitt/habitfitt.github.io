@@ -167,7 +167,6 @@ ol {
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	text-align: center;
-	width: 160px;
 	height: 46px;
 	border-left: 2px solid #e16521;
 	border-right: 2px solid #e4381C;
@@ -1059,6 +1058,7 @@ ol {
 	position: relative;
 	overflow: hidden;
 	margin-bottom: 30px;
+	height: 100%;
 }
 
 .single-price-plan h4 {
@@ -1074,7 +1074,7 @@ ol {
 
 .single-price-plan .price-plan h2 {
 	color: #272727;
-	font-size: 48px;
+	font-size: 32px;
 	font-weight: 700;
 	position: relative;
 	padding-left: 18px;
@@ -1582,7 +1582,7 @@ ol {
 }
 
 .footer-logo-item .f-logo {
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 
 .footer-logo-item .f-logo a {
@@ -3144,4 +3144,10 @@ ol {
 	.contact-map .map-hover {
 		left: 15%;
 	}
+}
+
+#contact-form-holder{
+	width: 450px;
+	position: relative;
+	margin:auto;
 }
