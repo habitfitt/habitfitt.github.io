@@ -299,10 +299,10 @@ AOS.init({
                 } else {
                     this.st.focus = '#name';
                 }
-                $("input[name='name']").val();
-                $("input[name='phone']").val();
-                $("input[name='emailaddress']").val();
-                $("textarea[name='message']").val();
+                $("input[name='name']").val("");
+                $("input[name='phone']").val("");
+                $("input[name='emailaddress']").val("");
+                $("textarea[name='message']").val("");
             }
         }
     });
@@ -312,8 +312,8 @@ AOS.init({
         Email.send({
             SecureToken: "8314adad-87e7-499d-a8bf-35f4e128e238",
             To: 'pkiruba85@hotmail.com',
-            From: $("input[name='emailaddress']").val(),
-            Subject: "Interested in Habitfit - " + $("input[name='name']").val() + '-' + $("input[name='phone']").val(),
+            From: 'pkiruba85@gmail.com',
+            Subject: "Interested in Habitfit - " + $("input[name='name']").val() + '-' + $("input[name='phone']").val() + '-' + $("input[name='emailaddress']").val(),
             Body: $("textarea[name='message']").val()
         }).then(message => {
             if (message === "OK") {
