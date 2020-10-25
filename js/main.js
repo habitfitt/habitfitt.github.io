@@ -303,6 +303,23 @@ AOS.init({
         }
     });
 
+    $('#contact-form').on("submit", function(e) {
+        e.preventDefault();
+        Email.send({
+            SecureToken: "8314adad-87e7-499d-a8bf-35f4e128e238",
+            To: 'pkiruba85@gmail.com',
+            From: $("input[name='emailaddress']").val(),
+            Subject: "Interested in Habitfit - " + $("input[name='phone']").val(),
+            Body: $("textarea[name='message']").val()
+        }).then(message => {
+            if (message === "OK") {
+                alert("Our expert team will get in touch shortly")
+            } else {
+                alert(message);
+            }
+        });
+    });
+
     $('.popup-with-move-anim').magnificPopup({
         type: 'inline',
 
