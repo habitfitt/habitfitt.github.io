@@ -307,14 +307,23 @@ AOS.init({
         }
     });
 
+    function getContent() {
+        var str = ['<table>'];
+        str.push('<tr><th>Name</th><td>' + $("input[name='name']").val() + '</td></tr>');
+        str.push('<tr><th>Phone</th><td>' + $("input[name='phone']").val() + '</td></tr>');
+        str.push('<tr><th>Email Address</th><td>' + $("input[name='emailaddress']").val() + '</td></tr>');
+        str.push('<tr><th>Message</th><td>' + $("textarea[name='message']").val() + '</td></tr></table>');
+        return str.join('');
+    }
+
     $('#contact-form').on("submit", function(e) {
         e.preventDefault();
         Email.send({
-            SecureToken: "8314adad-87e7-499d-a8bf-35f4e128e238",
-            To: 'pkiruba85@hotmail.com',
-            From: 'pkiruba85@gmail.com',
-            Subject: "Interested in Habitfit - " + $("input[name='name']").val() + '-' + $("input[name='phone']").val() + '-' + $("input[name='emailaddress']").val(),
-            Body: $("textarea[name='message']").val()
+            SecureToken: "05f34848-2d70-4596-aaa6-5434811c89e9",
+            To: 'habitfitt@gmail.com',
+            From: $("input[name='emailaddress']").val(),
+            Subject: "Interested in Habitfit",
+            Body: getContent()
         }).then(message => {
             if (message === "OK") {
                 alert("Our expert team will get in touch shortly");
