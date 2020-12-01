@@ -316,23 +316,23 @@ AOS.init({
         return str.join('');
     }
 
-    $('#contact-form').on("submit", function(e) {
-        e.preventDefault();
-        Email.send({
-            SecureToken: "05f34848-2d70-4596-aaa6-5434811c89e9",
-            To: 'habitfitt@gmail.com',
-            From: $("input[name='emailaddress']").val(),
-            Subject: "Interested in Habitfit",
-            Body: getContent()
-        }).then(message => {
-            if (message === "OK") {
-                alert("Our expert team will get in touch shortly");
-            } else {
-                alert(message);
-            }
-            $.magnificPopup.close();
-        });
-    });
+    // $('#contact-form').on("submit", function(e) {
+    //     e.preventDefault();
+    //     Email.send({
+    //         SecureToken: "05f34848-2d70-4596-aaa6-5434811c89e9",
+    //         To: 'habitfitt@gmail.com',
+    //         From: $("input[name='emailaddress']").val(),
+    //         Subject: "Interested in Habitfit",
+    //         Body: getContent()
+    //     }).then(message => {
+    //         if (message === "OK") {
+    //             alert("Our expert team will get in touch shortly");
+    //         } else {
+    //             alert(message);
+    //         }
+    //         $.magnificPopup.close();
+    //     });
+    // });
 
     $('.popup-with-move-anim').magnificPopup({
         type: 'inline',
